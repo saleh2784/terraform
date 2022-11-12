@@ -1,0 +1,24 @@
+create instance :
+
+tags: 
+name : saleh_personal
+env : staging
+
+ami: ami-070b208e993b59cea
+
+instance type : t2.micro
+
+key pair: devops-infra
+
+Network setting : 
+1. vpc : vpc-084771ff4b582e799
+2. Subnet : defualt CIDR
+3. Auto-assign public IP : enable
+4. Firewall (security groups) : aws_security_group_rule (new sg)
+
+storage: disk size 8 gb
+
+number of instance : 2
+
+
+
