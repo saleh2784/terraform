@@ -4,13 +4,13 @@ provider "aws" {
   region = var.aws_region
 }
 
-# resource "aws_vpc" "main" {
-#   cidr_block = "172.16.0.0/16"
-#   instance_tenancy = "default"
-#   tags = {
-#     Name = "main"
-#   }
-# }
+resource "aws_vpc" "main" {
+  cidr_block = "172.16.0.0/16"
+  instance_tenancy = "default"
+  tags = {
+    Name = "main"
+  }
+}
 
 #Create security group with firewall rules
 resource "aws_security_group" "aws_security_group_rule" {
@@ -123,18 +123,3 @@ output "ELB public DNS" {
 #   }
 # }
 
-# # Specifying Elastic IPs
-# resource "aws_lb" "example" {
-#   name               = "example"
-#   load_balancer_type = "network"
-
-#   subnet_mapping {
-#     subnet_id     = aws_subnet.example1.id
-#     allocation_id = aws_eip.example1.id
-#   }
-
-#   subnet_mapping {
-#     subnet_id     = aws_subnet.example2.id
-#     allocation_id = aws_eip.example2.id
-#   }
-# }
