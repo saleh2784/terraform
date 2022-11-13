@@ -15,7 +15,7 @@ resource "aws_vpc" "main" {
 }
 
 #Create security group with firewall rules
-resource "aws_security_group" "aws_security_group_rule" {
+resource "aws_security_group" "lab-sg-2022" {
   name        = var.security_group
   description = "security group for apps"
 
@@ -37,7 +37,7 @@ resource "aws_security_group" "aws_security_group_rule" {
  #Egress means traffic that’s leaving from inside the private network out to the public internet.
   egress {
     from_port   = 80 # should be any port NTC
-    to_port     = 80
+    to_port     = 80 # should be any port NTC
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -53,7 +53,7 @@ resource "aws_instance" "myInstance" {
   count = var.count_instance # "2"
   key_name = var.key_name
   instance_type = var.instance_type
-  vpc_security_group_ids = [aws_security_group.aws_security_group_rule.id] # NTC the sg-123456 number
+  vpc_security_group_ids = [aws_security_group.lab-sg-2022.id] 
   iassociate_public_ip_address = true # Auto-assign public IP "enable"
   tags= {
     Name = var.tag_name
@@ -85,12 +85,12 @@ resource "aws_s3_bucket_acl" "lb_logs" {
 
 # loadbalancer
 
-resource "aws_lb" "aws_elb_tf" {
+resource "aws_lb" "aws_lb_tf" {
   name               = "aws_elb_tf"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.terraform_aws_security_group_rule.id]
-  subnets            = [for subnet in aws_subnet.public : subnet.id]
+  security_groups    = [aws_security_group.lab-sg-2022.id]
+  subnets            = [for subnet in aws_subnet.public : subnet.id] ## need subnet and varible
 
   enable_deletion_protection = true
 
@@ -108,7 +108,7 @@ resource "aws_lb" "aws_elb_tf" {
 # OUTPUT to print to the console the ELB public DNS
 
 output "ELB public DNS" {
-  value = aws_lb.aws_elb_tf.public_dns
+  value = aws_lb.aws_lb_tf.public_dns
 }
 
 # # Network Load Balancer
