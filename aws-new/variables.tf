@@ -30,3 +30,14 @@ variable "count_instance" {
     description = "count_instance" 
     default     = "2" 
 }
+
+variable "subnet-cidr-block" { 
+    description = "subnet-cidr-block" 
+    default     = "10.0.1.0/24" 
+}
+
+
+
+
+
+
