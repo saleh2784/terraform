@@ -1,7 +1,7 @@
 # loadbalancer
 
-resource "aws_lb" "aws_lb_tf" {
-  name               = "aws_elb_tf"
+resource "aws_lb" "aws_alb_tf" {
+  name               = "aws_alb_tf"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lab-sg-2022.id]
@@ -10,12 +10,12 @@ resource "aws_lb" "aws_lb_tf" {
   enable_deletion_protection = true
 
   access_logs {
-    bucket  = aws_s3_bucket.lb_logs.bucket
+    bucket  = aws_s3_bucket.alb_logs.bucket
     prefix  = "test-lb"
     enabled = true
   }
 
   tags = {
-    Environment = "staging"
+    Environment = "lab"
   }
 }

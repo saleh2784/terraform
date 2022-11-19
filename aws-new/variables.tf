@@ -15,7 +15,7 @@ variable "instance_type" {
 
 variable "security_group" { 
     description = "Name of security group" 
-    default     = "aws_security_group_rule" 
+    default     = "lab-sg-2022" 
 }
 
 variable "tag_name" { 

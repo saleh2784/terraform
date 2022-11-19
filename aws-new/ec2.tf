@@ -4,11 +4,13 @@ resource "aws_instance" "myInstance" {
   count = var.count_instance # "2"
   key_name = var.key_name
   instance_type = var.instance_type
-  vpc_security_group_ids = [aws_security_group.lab-sg-2022.id] 
+  # user_data = file("init.sh")
+  # vpc_security_group_ids = [aws_security_group.lab-sg-2022.id] 
+  security_groups = [aws_security_group.lab-sg-2022.name]
   iassociate_public_ip_address = true # Auto-assign public IP "enable"
   tags= {
     Name = var.tag_name
-    Env = "staging"
+    Env = "lab"
   }
 
 # Install nginx  

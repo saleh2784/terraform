@@ -2,7 +2,7 @@
 
 resource "aws_security_group" "lab-sg-2022" {
   name        = var.security_group
-  description = "security group for apps"
+  description = "Allow inbound & outbound firewall traffic"
 
   ingress {
     from_port   = 80
@@ -20,10 +20,17 @@ resource "aws_security_group" "lab-sg-2022" {
 
  # outbound from nginx server
  #Egress means traffic that’s leaving from inside the private network out to the public internet.
+
   egress {
     from_port   = 80 # should be any port NTC
     to_port     = 80 # should be any port NTC
     protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port   = 0 
+    to_port     = 0 
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
