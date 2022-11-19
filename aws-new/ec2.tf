@@ -30,7 +30,7 @@ resource "aws_instance" "myInstance" {
   }
 }
 
-
+/* 
 
 # EC2 Instances
 resource "aws_instance" "myInstance" {
@@ -57,3 +57,4 @@ resource "aws_instance" "myInstance" {
 
   }
 }
+ */
