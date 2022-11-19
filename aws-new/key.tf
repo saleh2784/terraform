@@ -1,3 +1,5 @@
+# genrate key ##
+
 resource "aws_key_pair" "lab-key" {
   key_name   = "lab-key"
   public_key = tls_private_key.rsa.public_key_openssh
