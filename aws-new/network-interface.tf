@@ -1,4 +1,4 @@
-# 6. Create a network interface with an ip in the subnet that was created in step 4 
+# Create a network interface with an ip in the subnet that was created in step 4 
 
 resource "aws_network_interface" "web-server-nic" {
   subnet_id       = aws_subnet.subnet-1.id

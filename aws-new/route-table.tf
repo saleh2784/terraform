@@ -1,4 +1,4 @@
-# 3. create route table
+# create route table
 
 resource "aws_route_table" "lab-route-table" {
   vpc_id = aws_vpc.lab-vpc.id
@@ -19,7 +19,7 @@ resource "aws_route_table" "lab-route-table" {
 }
 
 
-# 5. create route table association
+# create route table association
 
 resource "aws_route_table_association" "lab-association" {
   subnet_id      = aws_subnet.subnet-1.id

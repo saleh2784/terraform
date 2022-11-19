@@ -1,4 +1,4 @@
-# 4. create subnet
+# create subnet
 
 resource "aws_subnet" "subnet-1" {
   vpc_id     = aws_vpc.lab-vpc.id

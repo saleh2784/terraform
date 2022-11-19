@@ -1,4 +1,4 @@
-# 8. Assign an elastic IP to the network interface created in step 6
+# Assign an elastic IP to the network interface created in step 6
 
 resource "aws_eip" "one" {
   vpc                       = true

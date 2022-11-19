@@ -1,4 +1,4 @@
-#Create security group with firewall rules
+# Create security group with firewall rules
 
 resource "aws_security_group" "TF-SG" {
   name        = var.security_group
