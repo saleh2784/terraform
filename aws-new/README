@@ -1,12 +1,10 @@
-terraform init 
-terraform fmt
-terraform valdiate
-terraform plan
-terraform apply --auto-approve
-terraform destroy
-
-
-
+## terraform commands ##
+# terraform init 
+# terraform fmt
+# terraform valdiate
+# terraform plan
+# terraform apply --auto-approve
+# terraform destroy
 
 
 ## create ec2 instance ##
