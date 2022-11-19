@@ -44,19 +44,19 @@ AWS Region : EU (Frankfurt) eu-central-1
 Object Ownership : ACLs disabled , ACLs denabled
 Block Public Access settings for this bucket : Block all puplic access
 Bucket Versioning : Disabled
-Tags : "name"
-env : staging
+#Tags : "name"
+#env : staging
 Default encryption: Disabled 
 
 ## create LB application ##
 type : application
-name : aws_lb_tf
+#name : aws_lb_tf
 scheme : Internet-facing , Internal
 ip address type : Ipv4
 vpc: defualt CIDR
 mappings: eu-central-1a , eu-central-1b , eu-central-1c
 security group : aws_security_group_rule
-Listeners and routring :  http : 80
+Listeners and routring :  #http : 80
 Listener tags : optional
  
 
