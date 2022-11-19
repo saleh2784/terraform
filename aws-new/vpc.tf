@@ -11,7 +11,7 @@ resource "aws_vpc" "lab-vpc" {
 # create subnet
 
 resource "aws_subnet" "subnet-1" {
-  vpc_id     = aws_vpc.main.id
+  vpc_id     = aws_vpc.lab-vpc.id
   cidr_block = "10.0.1.0/24"
 
   tags = {
