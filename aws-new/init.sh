@@ -4,7 +4,7 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo service nginx start
 
-## for apache ##
+## example for apache server ##
 # sudo su 
 # yum check-update
 # yum install -y httpd
