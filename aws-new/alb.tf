@@ -1,4 +1,4 @@
-# loadbalancer
+# application loadbalancer
 
 resource "aws_lb" "aws_alb_tf" {
   name               = "aws_alb_tf"
