@@ -1,6 +1,6 @@
 #Create security group with firewall rules
 
-resource "aws_security_group" "lab-sg-2022" {
+resource "aws_security_group" "TF-SG" {
   name        = var.security_group
   description = "Allow inbound & outbound firewall traffic"
 

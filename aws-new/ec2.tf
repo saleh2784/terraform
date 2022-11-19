@@ -7,7 +7,7 @@ resource "aws_instance" "myInstance" {
   ## run init.sh script if required instead of the provisioner "remote-exec"
   # user_data = file("init.sh") 
   # vpc_security_group_ids = [aws_security_group.lab-sg-2022.id] 
-  security_groups = [aws_security_group.lab-sg-2022.name]
+  security_groups = [aws_security_group.TF-SG.name]
   iassociate_public_ip_address = true # Auto-assign public IP "enable"
   tags= {
     Name = var.tag_name

@@ -4,7 +4,7 @@ resource "aws_lb" "aws_alb_tf" {
   name               = "aws_alb_tf"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.lab-sg-2022.id] ## NTC [aws_security_group.lab-sg-2022."name or id"]
+  security_groups    = [aws_security_group.TF-SG.id] ## NTC [aws_security_group.TF-SG."name or id"]
   subnets            = [for subnet in aws_subnet.public : subnet.id] ## need subnet and varible
 
   enable_deletion_protection = true
