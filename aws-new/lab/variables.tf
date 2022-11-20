@@ -1,6 +1,6 @@
 variable "aws_region" {
-       description = "The AWS region to create things in." 
-       default     = "us-east-2" 
+    description = "The AWS region to create things in." 
+    default     = "us-east-2" 
 }
 
 variable "key_name" { 
@@ -29,9 +29,4 @@ variable "ami_id" {
 variable "count_instance" { 
     description = "count_instance" 
     default     = "2" 
-}
-
-variable "subnet-cidr-block" { 
-    description = "subnet-cidr-block" 
-    default     = "10.0.1.0/24" 
 }
