@@ -8,6 +8,20 @@
 # terraform state show _________ for example = aws_internet_gateway.gw OR aws_vpc.lab-vpc
 # terraform destroy -target aws_instance.my-ec2-instance  # delete specific resource
 
+how to run it :
+
+# git clone https://github.com/saleh2784/terraform.git
+
+# updated the access key & secret key in provider.tf 
+
+# terraform init
+
+# terraform valdiate
+
+# terraform plan
+
+# terraform apply --auto-approve
+
 
 ## create ec2 instance ##
 
@@ -19,18 +33,12 @@ ami: ami-070b208e993b59cea
 instance type : t2.micro
 key pair: TF_key
 
-
-
 Network setting : 
-1. vpc : vpc-084771ff4b582e799
-2. Subnet : defualt CIDR
-3. Auto-assign public IP : enable
+1. vpc : default
+2. Subnet : defualt 
 4. Firewall (security groups) : aws_security_group_rule (new sg)
 
-storage: disk size 8 gb
-
 number of instance : 2
-
 
 
 ## create security group ##
@@ -47,28 +55,27 @@ Outbound rules :
 
 Tags:
 
+# key :
 
-## create s3 bucket ##
 
-Bucket name : my-tf-test-bucket
-AWS Region : EU (Frankfurt) eu-central-1
-Object Ownership : ACLs disabled , ACLs denabled
-Block Public Access settings for this bucket : Block all puplic access
-Bucket Versioning : Disabled
-#Tags : "name"
-#env : staging
-Default encryption: Disabled 
 
 ## create LB application ##
 type : application
-#name : aws_lb_tf
+#name : external-lb
 scheme : Internet-facing , Internal
 ip address type : Ipv4
 vpc: defualt CIDR
-mappings: eu-central-1a , eu-central-1b , eu-central-1c
+mappings: eu-central-1a , eu-central-1b 
 security group : aws_security_group_rule
 Listeners and routring :  #http : 80
 Listener tags : optional
+
+## elb
+## auto_scaling_group
+## lb_listener_rule
+## lb_listener
+## lb_target_group
+
  
 
 
