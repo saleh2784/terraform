@@ -23,8 +23,8 @@ variable "tag_name" {
     default     = "my-ec2-instance" 
 } 
 variable "ami_id" { 
-    description = "Amazon Linux 2 EC2 instance" 
-    default     = "ami-070b208e993b59cea" 
+    description = "Ubuntu 22.04 LTS" 
+    default     = "ami-0caef02b518350c8b" 
 }
 variable "count_instance" { 
     description = "count_instance" 

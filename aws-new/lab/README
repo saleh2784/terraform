@@ -12,7 +12,7 @@
 ## create ec2 instance ##
 
 tags: 
-name :     saleh_personal
+name : saleh_personal
 env : staging
 count : "2"
 ami: ami-070b208e993b59cea
