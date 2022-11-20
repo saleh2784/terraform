@@ -1,5 +1,5 @@
 # EC2 Instances
-resource "aws_instance" "myInstance" {
+resource "aws_instance" "my-ec2-instance" {
   ami = var.ami_id
   count = var.count_instance # "2"
   key_name = var.key_name

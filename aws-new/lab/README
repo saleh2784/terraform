@@ -1,4 +1,5 @@
 ## terraform commands ##
+
 # terraform init 
 # terraform fmt
 # terraform valdiate
@@ -7,6 +8,27 @@
 # terraform destroy
 # terraform state show _________ for example = aws_internet_gateway.gw OR aws_vpc.lab-vpc
 # terraform destroy -target aws_instance.my-ec2-instance  # delete specific resource
+
+
+###################################
+
+# create vpc
+# create subnet
+# create GW
+# create route-table
+# create eip
+# create NIC
+# create ec2 instance
+# create security group
+# genrate key 
+#create LB application 
+# elb
+# auto_scaling_group
+# lb_listener_rule
+# lb_listener
+# lb_target_group
+
+###################################
 
 how to run it :
 
@@ -21,61 +43,3 @@ how to run it :
 # terraform plan
 
 # terraform apply --auto-approve
-
-
-## create ec2 instance ##
-
-tags: 
-name : saleh_personal
-env : staging
-count : "2"
-ami: ami-070b208e993b59cea
-instance type : t2.micro
-key pair: TF_key
-
-Network setting : 
-1. vpc : default
-2. Subnet : defualt 
-4. Firewall (security groups) : aws_security_group_rule (new sg)
-
-number of instance : 2
-
-
-## create security group ##
-
-Security group name: xxx
-
-Description: xxx
-
-VPC: 
-
-Inbound rules :
-
-Outbound rules :
-
-Tags:
-
-# key :
-
-
-
-## create LB application ##
-type : application
-#name : external-lb
-scheme : Internet-facing , Internal
-ip address type : Ipv4
-vpc: defualt CIDR
-mappings: eu-central-1a , eu-central-1b 
-security group : aws_security_group_rule
-Listeners and routring :  #http : 80
-Listener tags : optional
-
-## elb
-## auto_scaling_group
-## lb_listener_rule
-## lb_listener
-## lb_target_group
-
- 
-
-
