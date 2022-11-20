@@ -1,11 +1,12 @@
 # EC2 Instances
+
 resource "aws_instance" "myInstance" {
   ami = var.ami_id
   count = var.count_instance # "2"
   key_name = var.key_name
   instance_type = var.instance_type
   availability_zone = "us-east-1a"
-  # user_data = file("init.sh")    ## run init.sh script if required instead of the provisioner "remote-exec"
+  user_data = file("init.sh")    ## run init.sh script if required instead of the provisioner "remote-exec"
   security_groups = [aws_security_group.TF-SG.name]
   
   network_interface {

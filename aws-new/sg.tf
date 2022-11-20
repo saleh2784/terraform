@@ -22,7 +22,7 @@ resource "aws_security_group" "TF-SG" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
- # outbound allow all traffic from any to any ipv4 & ipv6
+ # outbound allow all traffic from any to any ipv4
  #Egress means traffic that’s leaving from inside the private network out to the public internet.
 
   egress {
